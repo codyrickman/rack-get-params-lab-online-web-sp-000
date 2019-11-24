@@ -17,8 +17,8 @@ class Application
       if (@@cart.length == 0)
         resp.write("Your cart is empty")
       else
-      resp.write(@@cart)
-    end
+        resp.write(@@cart)
+      end
     elsif req.path.match(/add/)
       item = req.params["items"]
       if (@@items.include?(item))
