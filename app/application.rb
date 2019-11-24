@@ -16,11 +16,11 @@ class Application
     elsif req.path.match(/cart/)
       resp.write(@@cart)
     elsif req.path.match(/add/)
-      item = req.params["items"]
+      item = resp.params["items"]
       if (@@items.include?(item))
         @@cart << item
       else
-        req.write("Error")
+        resp.write("Error")
       end
     else
       resp.write "Path Not Found"
